@@ -1,0 +1,26 @@
+#!/bin/bash
+APP_ROOT=$(pwd)
+VOLUME_DIR=$APP_ROOT/volumes
+sudo docker rm -f opencv3
+chmod 400 sshkey.pem
+
+
+
+CONT_ID=`sudo docker run -i -t -d \
+-v $APP_ROOT/app:/app \
+-v $VOLUME_DIR/log:/var/log/supervisor  \
+--name opencv3 lalala/opencv3:dev`
+
+
+CONT_IP=$(sudo docker inspect opencv3 | grep IPAddress | cut -d '"' -f 4)
+
+
+
+RET=1
+echo "connecting to opencv container..."
+until [ ${RET} -eq 0 ]; do
+    ssh  -t -o IdentitiesOnly=yes -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i $APP_ROOT/sshkey.pem  root@$CONT_IP 'supervisorctl status'
+    RET=$?
+    sleep 1
+done
+

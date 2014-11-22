@@ -1,0 +1,21 @@
+#############################################################
+################### OFFICIAL UBUNTU REPOS ###################
+#############################################################
+
+###### Ubuntu Main Repos
+deb http://il.archive.ubuntu.com/ubuntu/ trusty main universe multiverse
+deb-src http://il.archive.ubuntu.com/ubuntu/ trusty main universe  multiverse
+
+
+
+###### Ubuntu Update Repos
+deb http://il.archive.ubuntu.com/ubuntu/ trusty-security main universe multiverse
+deb http://il.archive.ubuntu.com/ubuntu/ trusty-updates main universe  multiverse
+deb http://il.archive.ubuntu.com/ubuntu/ trusty-backports main universe  multiverse
+deb-src http://il.archive.ubuntu.com/ubuntu/ trusty-security main universe  multiverse
+deb-src http://il.archive.ubuntu.com/ubuntu/ trusty-updates main universe  multiverse
+deb-src http://il.archive.ubuntu.com/ubuntu/ trusty-backports main universe  multiverse
+
+
+deb http://ppa.launchpad.net/jon-severinsson/ffmpeg/ubuntu trusty main 
+deb-src http://ppa.launchpad.net/jon-severinsson/ffmpeg/ubuntu trusty main 
