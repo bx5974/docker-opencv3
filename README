@@ -1,0 +1,15 @@
+Opencv3 docker container. 
+Includes ssh and supervisor and some dev packages.
+Builded just for tests only.
+
+Usage:
+
+git clone git@github.com:kantorv/docker-opencv3.git
+cd docker-opencv3
+./build
+./start
+./login
+
+cd /app # this is shared folder
+
+
